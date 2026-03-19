@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --medical-blue: #0EA5E9;
+  --health-green: #22C55E;
+  --bg-soft-white: #F8FAFC;
+  --medical-cyan: #06B6D4;
+  --text-dark: #0F172A;
+  --text-body: #475569;
+}
+
+@layer base {
+  body {
+    @apply font-jakarta bg-medical-bg text-medical-body leading-relaxed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-medical-dark font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-full bg-gradient-to-r from-sky-500 to-sky-600 text-white font-semibold py-3 px-8 transition-all hover:scale-105 hover:shadow-glow focus:ring-4 focus:ring-sky-200 active:scale-95 flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply rounded-full bg-white text-medical-blue border border-medical-blue font-semibold py-3 px-8 transition-all hover:bg-slate-50 hover:scale-105 active:scale-95 flex items-center gap-2;
+  }
+
+  .glass-card {
+    @apply bg-white rounded-2xl p-6 shadow-xl border border-slate-100 hover:scale-105 transition-all duration-300;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
